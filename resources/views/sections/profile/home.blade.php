@@ -6,29 +6,20 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Предмет</th>
+                <th scope="col">Оценка</th>
+                <th scope="col">Дата</th>
             </tr>
         </thead>
         <tbody>
+            @foreach ($evaluates as $index => $evaluate)
             <tr>
-                <th scope="row">1</th>
-                <td>{{ $evaluates->sciense }}</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <th scope="row">{{ $index }}</th>
+                <td>{{ $evaluate->science }}</td>
+                <td>{{ $evaluate->point }}</td>
+                <td>{{ $evaluate->created_at }}</td>
             </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-            </tr>
+            @endforeach
         </tbody>
     </table>
 </div>

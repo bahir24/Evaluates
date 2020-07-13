@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Group extends Model
 {
     public function user(){
-        return $this->hasOne('App\User', 'group');
+        return $this->belongsTo('App\User', 'group');
     }
 }

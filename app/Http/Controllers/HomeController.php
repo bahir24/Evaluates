@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Evaluates;
+use App\Evaluate;
+use App\Science;
 
 class HomeController extends Controller
 {
@@ -26,7 +27,20 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $evaluates = Evaluates::find($user->id);
+        $evaluates = $user->evaluates;
+        // $sciences = Evaluate::class->scienc;
+        // $evaluates->science = $evaluates->science->science;
+        // $sciences = $evaluates->science;
+        // dd($evaluate->science);
+        $sciences = Science::all();
+        foreach($evaluates as $evaluate){
+            $evaluate->science = $sciences[8 % $evaluate->science]->science;
+        }
+        // dd(Evaluate->science);
+        // dd($sciences);
+        $user->group = $user->groups->group;
+        $user->course = $user->groups->course;
+
         return view('sections/profile/home', ['user' => $user], ['evaluates' => $evaluates]);
     }
 }

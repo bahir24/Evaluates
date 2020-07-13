@@ -15,7 +15,12 @@
                     </div>
                 @endguest
             </div>
-            <div class="col"></div>
+            <div class="col">
+                @auth
+                <p class="text-light m-auto">Группа {{ $user->group }}</p>
+                <p class="text-light m-auto">Курс {{ $user->course }}</p>
+                @endauth
+            </div>
             <div class="col-2 text-right">
                 @guest
                     <button type="button" onclick="window.location.href='{{ route('login') }}'" class="btn btn-outline-light bg-primary">{{ __('Login') }}</button>

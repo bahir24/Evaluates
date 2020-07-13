@@ -9,7 +9,7 @@
             <hr class="my-4">
             <p class="mb-5">Для входа в личный кабинет необходимо авторизоваться</p>
             <p class="lead welcome-button m-0">
-                <a class="btn btn-primary btn-lg btn-block @auth disabled @endauth" onclick="window.location.href='{{ route('login') }}'" href="#" role="button">Вход в личный кабинет</a>
+                <a class="btn btn-primary btn-lg btn-block" href="{{route('login') }}"  role="button">Вход в личный кабинет</a>
             </p>
         </div>
     </div>

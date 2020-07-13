@@ -10,10 +10,10 @@ $factory->define(Evaluate::class, function (Faker $faker) {
     return [
         'point' => $faker->numberBetween(1,5),
         'student' => function () {
-            return App\User::inRandomOrder()->first()->id;
+            return App\User::inRandomOrder()->first();
         },
         'science' => function(){
-            return App\Science::inRandomOrder()->first()->science;
+            return App\Science::inRandomOrder()->first()->id;
         },
     ];
 });

@@ -29,10 +29,18 @@ class User extends Authenticatable
     ];
 
     public function evaluates(){
-        return $this->belongsTo('App\User', 'foreign_key');
+        return $this->hasMany('App\Evaluate', 'student');
     }
     public function groups(){
-        return $this->hasOne('App\Group', 'foreign_key');
+        return $this->hasOne('App\Group', 'id');
+        dd($this->groups());
     }
+
+    // $this->$group = App\Group::find(1)->groups()
+
+    // $appends = [
+    //     'evaluate',
+
+    // ];
 
 }
