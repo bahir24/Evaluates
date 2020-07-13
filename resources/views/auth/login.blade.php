@@ -16,12 +16,12 @@
 
                                 <div class="col-md-6">
                                     <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" autofocus>
-                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                                     @error('username')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
+                                    <small id="emailHelp" class="form-text text-muted">Номер зачетной книжки</small>
                                 </div>
                             </div>
 

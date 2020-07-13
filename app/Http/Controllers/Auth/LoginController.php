@@ -40,25 +40,7 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-
-        // $this->username = $this->findUsername();
     }
-
-    /**
-     * Get the login username to be used by the controller.
-     *
-     * @return string
-     */
-    // public function findUsername()
-    // {
-    //     $login = request()->input('login');
-
-    //     $fieldType = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
-
-    //     request()->merge([$fieldType => $login]);
-
-    //     return $fieldType;
-    // }
 
     /**
      * Get username property.
@@ -69,4 +51,26 @@ class LoginController extends Controller
     {
         return $this->username;
     }
+
+    /**
+     * Get the login username to be used by the controller.
+     *
+     * @return string
+     */
+    // public function login(Request $request)
+    // {
+    //     $input = $request->all();
+
+    //     $this->validate($request, [
+    //         'username' => 'required',
+    //         'password' => 'required',
+    //     ]);
+    //     if(auth()->attempt(array('username' => $input['username'], 'password' => $input['password'])))
+    //     {
+    //         return redirect()->route('/');
+    //     }else{
+    //         return redirect()->route('login')
+    //             ->with('error','Name And Password Are Wrong.');
+    //     }
+    // }
 }

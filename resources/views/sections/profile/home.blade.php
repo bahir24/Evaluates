@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-{{-- @section('content')
+@section('content')
 <div class="container">
     <table class="table table-hover">
         <thead>
@@ -14,7 +14,7 @@
         <tbody>
             <tr>
                 <th scope="row">1</th>
-                <td>Mark</td>
+                <td>{{ $evaluates->sciense }}</td>
                 <td>Otto</td>
                 <td>@mdo</td>
             </tr>
@@ -32,7 +32,7 @@
         </tbody>
     </table>
 </div>
-@endsection --}}
+@endsection
 
 {{-- <div class="row justify-content-center">
         <div class="col-md-8">

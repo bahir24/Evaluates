@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Evaluates;
 
 class HomeController extends Controller
 {
@@ -25,6 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return view('sections/profile/home', ['user' => $user]);
+        $evaluates = Evaluates::find($user->id);
+        return view('sections/profile/home', ['user' => $user], ['evaluates' => $evaluates]);
     }
 }
